@@ -1,0 +1,6 @@
+<div *ngIf="msg" class="alert msg-btn" [ngClass]="getClasses()" (click)="close()">
+  <div class="row">
+    <div class="col-xs-10 col-sm-11">{{msg.message}}</div>
+    <div class="col-xs-2 col-sm-1">&times;</div>
+  </div>
+</div>

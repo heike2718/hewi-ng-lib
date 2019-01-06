@@ -1,8 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { HewiNgLibModule } from 'hewi-ng-lib';
-
 import { AppComponent } from './app.component';
+import { HewiNgLibModule } from 'projects/hewi-ng-lib/src/public_api';
 
 @NgModule({
   declarations: [

@@ -1,5 +1,20 @@
-<!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
-  <hewi-header>Welcome to {{ title }} Winkel!</hewi-header>
-  <hewi-hewi-ng-lib></hewi-hewi-ng-lib>
+<div class="container-fluid">
+  <div style="text-align:center">
+    <hewi-header>Welcome to {{ title }}</hewi-header>
+    <hewi-messages></hewi-messages>
 
+
+    <h2>Let's test the messages component. Click...</h2>
+    <div class="row">
+      <div class="col-4">
+        <button class="btn btn-info btn-block" (click)="openInfo()">Info</button>
+      </div>
+       <div class="col-4">
+        <button class="btn btn-warning btn-block" (click)="openWarning()">Warning</button>
+      </div>
+       <div class="col-4">
+        <button class="btn btn-danger btn-block" (click)="openError()">Error</button>
+      </div>
+    </div>
+
+  </div>

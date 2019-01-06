@@ -58,6 +58,8 @@
               "projects/hewi-ng-tester/src/assets"
             ],
             "styles": [
+	          "./node_modules/bootstrap/dist/css/bootstrap.min.css",
+		      "./node_modules/font-awesome/css/font-awesome.min.css",
               "projects/hewi-ng-tester/src/styles.css"
             ],
             "scripts": []

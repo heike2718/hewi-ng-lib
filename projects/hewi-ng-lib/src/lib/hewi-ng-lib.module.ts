@@ -1,11 +1,19 @@
-import { NgModule } from '@angular/core';
-import { HewiNgLibComponent } from './hewi-ng-lib.component';
+import { NgModule} from '@angular/core';
+import { CommonModule } from '@angular/common';
 import { HeaderComponent } from './header/header.component';
+import { MessagesComponent } from './messages/messages.component';
 
 @NgModule({
-  declarations: [HewiNgLibComponent, HeaderComponent],
-  imports: [
+  declarations: [
+    HeaderComponent,
+    MessagesComponent,
   ],
-  exports: [HewiNgLibComponent, HeaderComponent]
+  imports: [
+    CommonModule
+  ],
+  exports: [
+    HeaderComponent,
+    MessagesComponent,
+  ]
 })
 export class HewiNgLibModule { }
