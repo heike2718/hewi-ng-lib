@@ -4,7 +4,10 @@
     "baseUrl": "./",
     "outDir": "./dist/out-tsc",
     "sourceMap": true,
-    "declaration": false,
+    "declaration": true,
+    "stripInternal": true,
+    "strictNullChecks": false,
+    "noImplicitAny": true,
     "module": "es2015",
     "moduleResolution": "node",
     "emitDecoratorMetadata": true,
@@ -13,6 +16,7 @@
     "typeRoots": [
       "node_modules/@types"
     ],
+    "skipLibCheck": true,
     "lib": [
       "es2018",
       "dom"
