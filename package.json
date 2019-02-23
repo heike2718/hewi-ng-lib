@@ -1,6 +1,7 @@
 {
   "name": "hewi-ng-lib",
   "version": "0.1.1",
+  "description": "custom angular components like modal to be used in my angular projects",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
@@ -63,8 +64,13 @@
     "webpack-dev-server": "^3.1.11"
   },
   "repository": {
-  "type": "git",
-  "url": "https://github.com/heike2718/hewi-ng-lib"
+    "type": "git",
+    "url": "https://github.com/heike2718/hewi-ng-lib"
   },
-  "license" : "MIT Licenses"
+  "license": "MIT Licenses",
+  "author": {
+    "name": "Heike Winkelvoß",
+    "url": "https://mathe-jung-alt.de"
+  }
 }
+
