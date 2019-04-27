@@ -2,6 +2,8 @@
 
 common components for my angular apps
 
+[github](https://github.com/heike2718/hewi-ng-lib)
+
 ## Komponenten
 
 * header: Malt den Header rot. Das ist eine Test-Komponente ohne sinvollen Hintergrund zum Lernen
