@@ -1,0 +1,48 @@
+.modal-body {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 20;
+  border: 1px solid gray;
+  border-radius: 4px;
+  background: white;
+  box-shadow: 0 1px 16px 0 rgba(0, 0, 0, 0.2), 0 2px 8px 0 rgba(0, 0, 0, 0.14), 0 4px 8px -1px rgba(0, 0, 0, 0.12);
+}
+
+/* === Schicht über der gesamten Seite, die alle anderen Aktionen blockiert === */
+.modal-overlay {
+  display: inline-block;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  background: rgba(51, 51, 51, 0.3);
+  z-index: 10;
+}
+
+:host .close-icon {
+  width: 100%;
+  height: 20px;
+}
+
+/** === deep erfasst alle icons: die aus dem projected content und die, die möglicherweise aus dem modal selbst kommen === */
+
+:host .close-icon ::ng-deep i {
+  position: fixed;
+  top: 5px;
+  right: 5px;
+  height: 15px;
+  cursor: pointer;
+}
+
+/** === Für schmale devices breiter zeichnen === */
+@media (max-width: 768px) {
+  .modal-body {
+    position: absolute;
+    top: 15%;
+    left: 20%;
+    transform: translate(-15%, -20%);
+  }
+}

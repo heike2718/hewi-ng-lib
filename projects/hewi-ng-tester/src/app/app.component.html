@@ -1,20 +1,67 @@
+<!-- Falls die hewiModalOpenOnClick-Direktive verwendet wird, Dialog zum Anzeigen des Dialogs inside *ngIf, weil sie sonst keine Elemente bekommt -->
+<div *ngIf="showDialog">
+
+  <!-- Definition der Parameter für das template, die im Dialog verfügbar sein sollen, werden über context durchgereicht -->
+  <ng-template #dialogBody let-dialogTitle="dialogTitle" let-chkSelected="chkSelected">
+
+    <div class="container-fluid">
+      <div class="card">
+        <div class="card-header">
+          <h4>{{dialogTitle}}</h4>
+        </div>
+        <div class="card-body">
+          <p>Hier kann Text kommen.</p>
+          <p>Hier kann noch mehr Text kommmen.</p>
+          <div class="col-sm-12 col-md-9">
+            <button class="btn btn-dark" [disabled]="btnDisabled" type="checkbox">Jawoll</button>
+          </div>
+
+        </div>
+        <div class="card-footer">
+          <div class="row btn-container">
+            <div class="col-md-12 btn-wrapper">
+              <div class="col-md-12 btn btn-outline-dark" (click)="closeModal()">
+                OK
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </ng-template>
+
+  <!-- context findet sich oben in der Definition des #dialogBody-templates wieder -->
+  <hewi-modal #modal [hideOnEscape]="false" [hideOnClickOutside]="true" [body]="dialogBody"
+    *hewiModalOpenOnClick="[openDialogBtn]" [context]="{dialogTitle: 'Titel des Dialogs', btnDisabled: btnDisabled}">
+    <i class="fa fa-times" (click)="modal.close()"></i>
+  </hewi-modal>
+</div>
+
+
 <div class="container-fluid">
   <div style="text-align:center">
     <hewi-header>Welcome to {{ title }}</hewi-header>
     <hewi-messages></hewi-messages>
-
-
-    <h2>Let's test the messages component. Click...</h2>
-    <div class="row">
-      <div class="col-4">
-        <button class="btn btn-info btn-block" (click)="openInfo()">Info</button>
-      </div>
-       <div class="col-4">
-        <button class="btn btn-warning btn-block" (click)="openWarning()">Warning</button>
-      </div>
-       <div class="col-4">
-        <button class="btn btn-danger btn-block" (click)="openError()">Error</button>
-      </div>
-    </div>
-
   </div>
+
+  <h2>Let's test the messages component. Click...</h2>
+  <div class="row">
+    <div class="col-4">
+      <button class="btn btn-info btn-block" (click)="openInfo()">Info</button>
+    </div>
+    <div class="col-4">
+      <button class="btn btn-warning btn-block" (click)="openWarning()">Warning</button>
+    </div>
+    <div class="col-4">
+      <button class="btn btn-danger btn-block" (click)="openError()">Error</button>
+    </div>
+  </div>
+
+
+  <h2>Let's test the modal component. Click...</h2>
+  <div class="col-md-2 btn-wrapper">
+    <button #openDialogBtn class="col-md-12 btn btn-primary" (click)="onClickOpenModal()">
+      Dialog
+    </button>
+  </div>
+</div>

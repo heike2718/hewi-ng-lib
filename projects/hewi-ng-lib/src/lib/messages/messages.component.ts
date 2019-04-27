@@ -1,7 +1,7 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Subscription } from 'rxjs';
-import { MessagesService } from '../messages.service';
-import { Message, INFO, WARN, ERROR } from '../models/message.model';
+import { MessagesService } from './messages.service';
+import { Message, INFO, WARN, ERROR } from './models/message.model';
 
 @Component({
   selector: 'hewi-messages',

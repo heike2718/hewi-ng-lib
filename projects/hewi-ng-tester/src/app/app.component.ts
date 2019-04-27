@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MessagesService } from 'projects/hewi-ng-lib/src/public_api';
+import { ModalService } from 'projects/hewi-ng-lib/src/public_api';
 import { filter } from 'rxjs/operators';
 
 @Component({
@@ -8,9 +9,17 @@ import { filter } from 'rxjs/operators';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit {
+
   title = 'hewi-ng-tester';
 
-   constructor(private messagesService: MessagesService) {}
+  dialogTitle = ''
+
+  btnDisabled = false;
+
+  showDialog: boolean;
+
+
+  constructor(private messagesService: MessagesService, private modalService: ModalService) { }
 
   ngOnInit() {
     this.messagesService.message$.pipe(
@@ -36,4 +45,21 @@ export class AppComponent implements OnInit {
   openError() {
     this.messagesService.error(' +++ OMG +++  Please reinstall universe and reboot.');
   }
+
+
+  onClickOpenModal() {
+    this.openModal();
+  }
+
+  private openModal(): void {
+    this.showDialog = true;
+    this.modalService.open();
+  }
+
+
+  closeModal() {
+    this.modalService.close();
+  }
+
+
 }
