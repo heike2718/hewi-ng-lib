@@ -1,12 +1,12 @@
 {
   "name": "hewi-ng-lib",
-  "version": "0.1.5",
+  "version": "0.1.6",
   "author": {
     "name": "Heike Winkelvoß"
   },
   "description": "This is an Angular Library for shared usage in my angular apps.",
   "keywords": ["Angular", "Library"],
-  "license": "SEE LICENSE IN LICENSE",
+  "license": "MIT",
   "repository": {
     "type": "git",
     "url": "https://github.com/heike2718/hewi-ng-lib.git"
