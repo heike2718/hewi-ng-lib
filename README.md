@@ -9,6 +9,7 @@ common components for my angular apps
 * modal: Allgemeine Dialog-Funktionalität
 
 ## Notizen (chronologisch absteigend)
+* HateoasPayload als JSON-Objekt ergänzt
 * modal fertig zum Verwenden in Apps
 * messages-Komponente fertig zum Verwenden in Apps
 * by Angular-CLI generated component and a easy peasy make text to red h1- component just for playing with the tools
