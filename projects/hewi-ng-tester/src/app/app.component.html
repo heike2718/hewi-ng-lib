@@ -41,7 +41,14 @@
 <div class="container-fluid">
   <div style="text-align:center">
     <hewi-header>Welcome to {{ title }}</hewi-header>
-    <hewi-messages></hewi-messages>
+	<hewi-messages></hewi-messages>
+
+	<div *ngIf="showJwt">
+		<p>{{jwt}}</p>
+		<p *ngIf="loggedIn">eingelogged</p>
+		<p *ngIf="!loggedIn">nicht eingelogged</p>
+		<p>JWT ist noch {{tokenDurationMinutes}} Minuten gültig</p>
+	</div>
   </div>
 
   <h2>Let's test the messages component. Click...</h2>
@@ -64,4 +71,14 @@
       Dialog
     </button>
   </div>
+
+  <h2>Let's test the JWT. Click...</h2>
+  <div class="col-md-2 btn-wrapper">
+    <button class="col-md-12 btn btn-primary" (click)="checkJWT()">
+      JWT
+    </button>
+  </div>
+
+
 </div>
+
