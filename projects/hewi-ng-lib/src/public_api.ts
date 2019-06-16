@@ -17,3 +17,7 @@ export * from './lib/messages/models/message.model';
 export * from './lib/modal/modal-open-on-click.directive';
 export * from './lib/modal/modal.service';
 export * from './lib/modal/modal.component';
+export * from './lib/jwt/jwt.model';
+export * from './lib/jwt/jwt.service';
+
+
