@@ -4,38 +4,38 @@ import { Message, INFO, WARN, ERROR } from './models/message.model';
 
 
 @Injectable({
-  providedIn: 'root'
+	providedIn: 'root'
 })
 export class MessagesService {
 
-  private messageSubject = new BehaviorSubject<Message>(undefined);
+	private messageSubject = new BehaviorSubject<Message>(undefined);
 
-  message$: Observable<Message> = this.messageSubject.asObservable();
+	message$: Observable<Message> = this.messageSubject.asObservable();
 
-  constructor() {}
+	constructor() { }
 
-  info(message: string) {
-    this.messageSubject.next({
-      level: INFO,
-      message: message
-    });
-  }
+	info(message: string) {
+		this.messageSubject.next({
+			level: INFO,
+			message: message
+		});
+	}
 
-  warn(message: string) {
-    this.messageSubject.next({
-      level: WARN,
-      message: message
-    });
-  }
+	warn(message: string) {
+		this.messageSubject.next({
+			level: WARN,
+			message: message
+		});
+	}
 
-  error(message: string) {
-    this.messageSubject.next({
-      level: ERROR,
-      message: message
-    });
-  }
+	error(message: string) {
+		this.messageSubject.next({
+			level: ERROR,
+			message: message
+		});
+	}
 
-  clear() {
-     this.messageSubject.next(undefined);
-  }
+	clear() {
+		this.messageSubject.next(undefined);
+	}
 }

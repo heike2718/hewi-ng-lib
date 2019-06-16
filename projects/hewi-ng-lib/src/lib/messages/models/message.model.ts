@@ -10,26 +10,26 @@ export const ERROR = 'ERROR';
 
 export interface Message {
 
-    level: string;
-    message: string;
+	level: string;
+	message: string;
 }
 
 export interface HateoasLink {
-    url: string;
-    rel: string;
-    method: string;
-    mediaType: string;
+	url: string;
+	rel: string;
+	method: string;
+	mediaType: string;
 }
 
 export interface HateoasPayload {
-    id: string;
-    url: string;
-    links: HateoasLink[];
+	id: string;
+	url: string;
+	links: HateoasLink[];
 }
 
 
 export interface ResponsePayload {
-    message: Message;
-    data?: any;
+	message: Message;
+	data?: any;
 }
 

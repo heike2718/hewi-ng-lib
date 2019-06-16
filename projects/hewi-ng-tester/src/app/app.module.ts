@@ -4,14 +4,14 @@ import { AppComponent } from './app.component';
 import { HewiNgLibModule } from 'projects/hewi-ng-lib/src/public_api';
 
 @NgModule({
-  declarations: [
-    AppComponent
-  ],
-  imports: [
-    BrowserModule,
-    HewiNgLibModule
-  ],
-  providers: [],
-  bootstrap: [AppComponent]
+	declarations: [
+		AppComponent
+	],
+	imports: [
+		BrowserModule,
+		HewiNgLibModule
+	],
+	providers: [],
+	bootstrap: [AppComponent]
 })
 export class AppModule { }
