@@ -7,7 +7,7 @@ common components for my angular apps
 * header: Malt den Header rot. Das ist eine Test-Komponente ohne sinvollen Hintergrund zum Lernen
 * messages: Anzeige von Info-, Warning- und Errormessage über einen Message-Service (reactive / subscribe)
 * modal: Allgemeine Dialog-Funktionalität
-* jwt: Utilities zur Kommunikation mit dem [authprovider](https://github.com/heike2718/auth-app)
+* jwt: Utilities zur Kommunikation mit dem [authprovider](https://github.com/heike2718/auth-app) (Release 0.1.8)
 
 
 ## Notizen (chronologisch absteigend)
