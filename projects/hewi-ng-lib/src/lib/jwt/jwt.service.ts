@@ -49,13 +49,12 @@ export class JWTService {
 		return moment(expiresAt);
 	}
 
-	/** Eingelogged ist man, wenn man ein gültiges JWT hat und der auth_state login ist (nicht signUp!)*/
-	public isLoggedIn(): boolean {
+	public isJWTExpired(): boolean {
 		const expiration = this.getExpirationAsMoment();
 		if (expiration === null) {
 			return false;
 		}
-		return moment().isBefore(expiration);
+		return moment().isAfter(expiration);
 	}
 
 	/** Gibt die Gültigkeit des JWT ab jetzt in Minuten an */
