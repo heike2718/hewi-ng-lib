@@ -6,6 +6,7 @@ export const STORAGE_KEY_JWT = 'id_token';
 export const STORAGE_KEY_EXPIRES_AT = 'expires_at';
 export const STORAGE_KEY_AUTH_STATE = 'auth_state';
 export const STORAGE_KEY_REFRESH_TOKEN = 'refresh_token';
+export const STORAGE_KEY_ACCESS_TOKEN = 'access_token';
 
 
 export interface AuthResult {
@@ -13,7 +14,8 @@ export interface AuthResult {
 	refreshToken?: string;
 	expiresAt?: number;
 	tokenType?: string;
-	state: string;
+	state?: string;
+	nonce?: string;
 	idToken?: string;
 }
 

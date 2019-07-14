@@ -30,6 +30,7 @@ export class JWTService {
 						case 'expiresAt': result.expiresAt = JSON.parse(keyVal[1]); break;
 						case 'tokenType': result.tokenType = keyVal[1]; break;
 						case 'state': result.state = keyVal[1]; break;
+						case 'nonce': result.nonce = keyVal[1]; break;
 						case 'idToken': result.idToken = keyVal[1]; break;
 					}
 				}
@@ -76,11 +77,11 @@ export class JWTService {
 		return diff;
 	}
 
-	public getLoginUrl(authUrl: string, clientId: string, redirectUrl: string) {
-		return authUrl + '#/login?clientId=' + clientId + '&redirectUrl=' + redirectUrl;
+	public getLoginUrl(authUrl: string, accessToken: string, redirectUrl: string, state: string, nonce: string) {
+		return authUrl + '#/login?accessToken=' + accessToken + '&redirectUrl=' + redirectUrl + '&state=' + state + '&nonce=' + nonce;
 	}
 
-	public getSignupUrl(authUrl: string, clientId: string, redirectUrl: string) {
-		return authUrl + '#/signup?clientId=' + clientId + '&redirectUrl=' + redirectUrl;
+	public getSignupUrl(authUrl: string, accessToken: string, redirectUrl: string, state: string, nonce: string) {
+		return authUrl + '#/signup?accessToken=' + accessToken + '&redirectUrl=' + redirectUrl + '&state=' + state + '&nonce=' + nonce;
 	}
 }
