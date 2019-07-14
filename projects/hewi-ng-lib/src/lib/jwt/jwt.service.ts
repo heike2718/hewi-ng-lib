@@ -52,7 +52,7 @@ export class JWTService {
 	public isJWTExpired(): boolean {
 		const expiration = this.getExpirationAsMoment();
 		if (expiration === null) {
-			return false;
+			return true;
 		}
 		return moment().isAfter(expiration);
 	}
