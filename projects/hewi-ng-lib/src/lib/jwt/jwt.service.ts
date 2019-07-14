@@ -1,6 +1,6 @@
 import * as moment_ from 'moment';
 import { Injectable } from '@angular/core';
-import { AuthResult, AUTH_STATE_EMPTY, AUTH_STATE_LOGIN, STORAGE_KEY_EXPIRES_AT, STORAGE_KEY_AUTH_STATE } from './jwt.model';
+import { AuthResult, STORAGE_KEY_JWT_EXPIRES_AT } from './jwt.model';
 
 const moment = moment_;
 
@@ -16,7 +16,7 @@ export class JWTService {
 
 		hashStr = hashStr.replace(/^#?\/?/, '');
 
-		const result: AuthResult = { state: AUTH_STATE_EMPTY };
+		const result: AuthResult = {};
 
 		if (hashStr.length > 0) {
 
@@ -30,7 +30,6 @@ export class JWTService {
 						case 'expiresAt': result.expiresAt = JSON.parse(keyVal[1]); break;
 						case 'tokenType': result.tokenType = keyVal[1]; break;
 						case 'state': result.state = keyVal[1]; break;
-						case 'nonce': result.nonce = keyVal[1]; break;
 						case 'idToken': result.idToken = keyVal[1]; break;
 					}
 				}
@@ -41,20 +40,17 @@ export class JWTService {
 
 
 	private getExpirationAsMoment() {
-		if (!localStorage.getItem(STORAGE_KEY_EXPIRES_AT)) {
+		if (!localStorage.getItem(STORAGE_KEY_JWT_EXPIRES_AT)) {
 			return null;
 		}
-		const expiration = localStorage.getItem(STORAGE_KEY_EXPIRES_AT);
+		const expiration = localStorage.getItem(STORAGE_KEY_JWT_EXPIRES_AT);
+		// das expiresAt sind Sekunden seit 01.01.1970
 		const expiresAt = JSON.parse(expiration) * 1000;
 		return moment(expiresAt);
 	}
 
 	/** Eingelogged ist man, wenn man ein gültiges JWT hat und der auth_state login ist (nicht signUp!)*/
 	public isLoggedIn(): boolean {
-		const authState = localStorage.getItem(STORAGE_KEY_AUTH_STATE);
-		if (!authState || authState !== AUTH_STATE_LOGIN) {
-			return false;
-		}
 		const expiration = this.getExpirationAsMoment();
 		if (expiration === null) {
 			return false;

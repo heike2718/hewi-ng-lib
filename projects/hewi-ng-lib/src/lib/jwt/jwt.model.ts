@@ -1,12 +1,8 @@
-export const AUTH_STATE_SIGNUP = 'signup';
-export const AUTH_STATE_LOGIN = 'login';
-export const AUTH_STATE_EMPTY = 'empty';
-
-export const STORAGE_KEY_JWT = 'id_token';
-export const STORAGE_KEY_EXPIRES_AT = 'expires_at';
-export const STORAGE_KEY_AUTH_STATE = 'auth_state';
-export const STORAGE_KEY_REFRESH_TOKEN = 'refresh_token';
-export const STORAGE_KEY_ACCESS_TOKEN = 'access_token';
+export const STORAGE_KEY_JWT = 'jwt';
+export const STORAGE_KEY_JWT_EXPIRES_AT = 'jwt_exp';
+export const STORAGE_KEY_JWT_STATE = 'jwt_state';
+export const STORAGE_KEY_JWT_REFRESH_TOKEN = 'jwt_rt';
+export const STORAGE_KEY_JWT_ACCESS_TOKEN = 'jwt_at';
 
 
 export interface AuthResult {
@@ -15,7 +11,6 @@ export interface AuthResult {
 	expiresAt?: number;
 	tokenType?: string;
 	state?: string;
-	nonce?: string;
 	idToken?: string;
 }
 
