@@ -73,10 +73,10 @@ export class JWTService {
 	}
 
 	public getLoginUrl(authUrl: string, accessToken: string, redirectUrl: string, state: string, nonce: string) {
-		return authUrl + '#/login?accessToken=' + accessToken + '&redirectUrl=' + redirectUrl + '&state=' + state + '&nonce=' + nonce;
+		return authUrl + '#/login?accessToken=' + accessToken + '&state=' + state + '&nonce=' + nonce + '&redirectUrl=' + redirectUrl;
 	}
 
 	public getSignupUrl(authUrl: string, accessToken: string, redirectUrl: string, state: string, nonce: string) {
-		return authUrl + '#/signup?accessToken=' + accessToken + '&redirectUrl=' + redirectUrl + '&state=' + state + '&nonce=' + nonce;
+		return authUrl + '#/signup?accessToken=' + accessToken + '&state=' + state + '&nonce=' + nonce + '&redirectUrl=' + redirectUrl;
 	}
 }
