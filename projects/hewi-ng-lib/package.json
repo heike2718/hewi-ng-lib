@@ -1,11 +1,14 @@
 {
 	"name": "hewi-ng-lib",
-	"version": "2.2.1",
+	"version": "2.2.2",
 	"author": {
 		"name": "Heike Winkelvoß"
 	},
 	"description": "This is an Angular Library for shared usage in my angular apps.",
-	"keywords": ["Angular", "Library"],
+	"keywords": [
+		"Angular",
+		"Library"
+	],
 	"license": "MIT",
 	"repository": {
 		"type": "git",
