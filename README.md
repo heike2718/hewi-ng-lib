@@ -11,6 +11,9 @@ common components for my angular apps
 
 
 ## Notizen (chronologisch absteigend)
+
+__2.2.2__ JWTService: Query-Parameter state und nonce vor der redirect url, da bei #-redirect-urls die alles nach # angeschnitten wird.
+
 * HateoasPayload als JSON-Objekt ergänzt
 * modal fertig zum Verwenden in Apps
 * messages-Komponente fertig zum Verwenden in Apps
