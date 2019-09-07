@@ -8,9 +8,12 @@ common components for my angular apps
 * messages: Anzeige von Info-, Warning- und Errormessage über einen Message-Service (reactive / subscribe)
 * modal: Allgemeine Dialog-Funktionalität
 * jwt: Utilities zur Kommunikation mit dem [authprovider](https://github.com/heike2718/auth-app)
+* logger: api mit der man client-errors zu einem Server posten kann.
 
 
 ## Notizen (chronologisch absteigend)
+
+__2.2.3__ logger: LogService, LogPublishers and LogEntry-Model
 
 __2.2.2__ JWTService: Query-Parameter state und nonce vor der redirect url, da bei #-redirect-urls die alles nach # angeschnitten wird.
 
