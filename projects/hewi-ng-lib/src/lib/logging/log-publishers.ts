@@ -2,7 +2,7 @@ import { Observable, of } from 'rxjs';
 import { LogEntry } from './log.model';
 import { HttpClient } from '@angular/common/http';
 import { map, publishLast, refCount } from 'rxjs/operators';
-import { ResponsePayload } from 'hewi-ng-lib';
+import { ResponsePayload } from '../messages/models/message.model';
 
 export abstract class LogPublisher {
 	location: string;
