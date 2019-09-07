@@ -1,22 +1,17 @@
 import { Injectable } from '@angular/core';
 import { LogLevel, LogEntry } from './log.model';
-import { LogPublishersService } from './log-publishers.service';
 import { LogPublisher } from './log-publishers';
-import { STORAGE_KEY_CLIENT_ACCESS_TOKEN } from '../shared/model/oauth.model';
 
 @Injectable({
 	providedIn: 'root'
 })
 export class LogService {
 
-	level: LogLevel;
+	private level: LogLevel;
 	private publishers: LogPublisher[];
 
-
-
-	constructor(private publishersService: LogPublishersService) {
-		this.level = LogLevel.All;
-		this.publishers = this.publishersService.publishers;
+	constructor() {
+		this.level = LogLevel.Error;
 	}
 
 	debug(msg: string, accessToken: string) {
@@ -43,12 +38,19 @@ export class LogService {
 		console.log(new Date() + ': ' + JSON.stringify(msg));
 	}
 
+	public registerPublishers(publishers: LogPublisher[]) {
+		this.publishers = publishers;
+	}
+
+	public setLevel(level: LogLevel): LogService {
+		this.level = level;
+		return this;
+	}
+
 	private writeToLog(msg: string, level: LogLevel, accessToken: string) {
 		if (this.shouldLog(level)) {
 
-			const timestamp = new Date().getTime();
-
-			const entry = new LogEntry(timestamp, msg, level, accessToken);
+			const entry = new LogEntry(msg, level, accessToken);
 
 			for (const publisher of this.publishers) {
 				publisher.log(entry)
