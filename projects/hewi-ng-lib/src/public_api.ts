@@ -19,5 +19,8 @@ export * from './lib/modal/modal.service';
 export * from './lib/modal/modal.component';
 export * from './lib/jwt/jwt.model';
 export * from './lib/jwt/jwt.service';
+export * from './lib/logging/log-publishers';
+export * from './lib/logging/log.model';
+export * from './lib/logging/log.service';
 
 

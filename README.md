@@ -13,7 +13,7 @@ common components for my angular apps
 
 ## Notizen (chronologisch absteigend)
 
-__2.2.3__ logger: LogService, LogPublishers and LogEntry-Model
+__2.2.4__ logger: LogService, LogPublishers and LogEntry-Model
 
 __2.2.2__ JWTService: Query-Parameter state und nonce vor der redirect url, da bei #-redirect-urls die alles nach # angeschnitten wird.
 
