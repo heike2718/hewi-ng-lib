@@ -18,15 +18,14 @@
 	},
 	"private": false,
 	"dependencies": {
-		"@angular/animations": "~7.2.14",
-		"@angular/common": "~7.2.14",
-		"@angular/compiler": "~7.2.14",
-		"@angular/core": "~7.2.14",
-		"@angular/forms": "~7.2.14",
-		"@angular/http": "~7.2.14",
-		"@angular/platform-browser": "~7.2.14",
-		"@angular/platform-browser-dynamic": "~7.2.14",
-		"@angular/router": "~7.2.14",
+		"@angular/animations": "^7.2.15",
+		"@angular/common": "^7.2.15",
+		"@angular/compiler": "^7.2.15",
+		"@angular/core": "^7.2.15",
+		"@angular/forms": "^7.2.15",
+		"@angular/platform-browser": "^7.2.15",
+		"@angular/platform-browser-dynamic": "^7.2.15",
+		"@angular/router": "^7.2.15",
 		"bootstrap": "^4.3.1",
 		"core-js": "^2.6.9",
 		"font-awesome": "^4.7.0",
@@ -34,14 +33,13 @@
 		"jquery": "^3.4.1",
 		"moment": "^2.24.0",
 		"popper.js": "^1.15.0",
-		"rxjs": "~6.5.1",
-		"zone.js": "~0.9.1"
+		"rxjs": "~6.5.1"
 	},
 	"devDependencies": {
 		"@angular-devkit/build-angular": "^0.13.9",
 		"@angular-devkit/build-ng-packagr": "^0.13.8",
 		"@angular/cli": "^7.3.8",
-		"@angular/compiler-cli": "~7.2.14",
+		"@angular/compiler-cli": "^7.2.15",
 		"@angular/language-service": "~7.2.14",
 		"@types/jasmine": "~3.3.12",
 		"@types/jasminewd2": "~2.0.6",
@@ -63,7 +61,8 @@
 		"tslint": "~5.16.0",
 		"typescript": "3.1.6",
 		"webpack": "^4.30.0",
-		"webpack-dev-server": "^3.3.1"
+		"webpack-dev-server": "^3.3.1",
+		"zone.js": "^0.8.26"
 	},
 	"repository": {
 		"type": "git",
