@@ -33,7 +33,7 @@ __2.2.2__ JWTService: Query-Parameter state und nonce vor der redirect url, da b
 
 * implement a [LogPublishersService]( ./projects/hewi-ng-tester/src/app/services/log-publishers.service.ts )
 * define an environment variable for the loglevel
-* in [app.component.ts](./projects/hewi-ng-tester/src/app/app.component.ts) init the log level and register your LogPublishers
+* in [app.component.ts](./projects/hewi-ng-tester/src/app/app.component.ts) init the log level and register your LogPublishers. If you have a global error handler then it is best to init logging there.
 
 
 ## Tests
