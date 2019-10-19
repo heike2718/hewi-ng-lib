@@ -15,6 +15,8 @@ common components for my angular apps
 
 ## Notizen (chronologisch absteigend)
 
+__3.0.1__ initialize loglevel more convenients
+
 __3.0.0__ upgrade to angular 8
 
 __2.2.4__ logger: LogService, LogPublishers and LogEntry-Model
