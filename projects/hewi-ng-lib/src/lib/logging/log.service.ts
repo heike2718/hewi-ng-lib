@@ -10,6 +10,8 @@ export class LogService {
 	private level: LogLevel;
 	private publishers: LogPublisher[];
 
+	private dateOptions = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+
 	constructor() {
 		this.level = LogLevel.Error;
 	}
@@ -35,7 +37,7 @@ export class LogService {
 	}
 
 	log(msg: any) {
-		console.log(new Date() + ': ' + JSON.stringify(msg));
+		console.log(new Date().toLocaleString('de-DE') + ': ' + JSON.stringify(msg));
 	}
 
 	public registerPublishers(publishers: LogPublisher[]) {

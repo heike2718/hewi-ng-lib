@@ -8,7 +8,9 @@ common components for my angular apps
 * messages: Anzeige von Info-, Warning- und Errormessage über einen Message-Service (reactive / subscribe)
 * modal: Allgemeine Dialog-Funktionalität
 * jwt: Utilities zur Kommunikation mit dem [authprovider](https://github.com/heike2718/auth-app)
-* logger: api mit der man client-errors zu einem Server posten kann.
+* logger: api mit der man client-errors zu einem Server posten kann. This implementation is based on [Logging in Angular Applications](https://www.codemag.com/Article/1711021/Logging-in-Angular-Applications)
+
+
 
 
 ## Notizen (chronologisch absteigend)

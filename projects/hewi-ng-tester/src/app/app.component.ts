@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { MessagesService, STORAGE_KEY_JWT, JWTService } from 'projects/hewi-ng-lib/src/public_api';
+import { MessagesService, STORAGE_KEY_JWT, STORAGE_KEY_JWT_STATE, JWTService, LogService } from 'projects/hewi-ng-lib/src/public_api';
 import { ModalService } from 'projects/hewi-ng-lib/src/public_api';
 import { filter } from 'rxjs/operators';
 import { AuthService } from './services/auth.service';
@@ -13,7 +13,7 @@ export class AppComponent implements OnInit {
 
 	title = 'hewi-ng-tester';
 
-	dialogTitle = ''
+	dialogTitle = '';
 
 	btnDisabled = false;
 
@@ -31,9 +31,13 @@ export class AppComponent implements OnInit {
 	constructor(private messagesService: MessagesService
 		, private modalService: ModalService
 		, private authService: AuthService
-		, private jwtService: JWTService) { }
+		, private jwtService: JWTService
+		, private logger: LogService) { }
 
 	ngOnInit() {
+
+		this.logger.log('=== app about to init ====');
+
 		this.showJwt = false;
 		this.messagesService.message$.pipe(
 			filter(
@@ -53,8 +57,11 @@ export class AppComponent implements OnInit {
 		} else {
 			this.jwt = 'please call url with hash';
 		}
-		this.loggedIn = this.jwtService.isLoggedIn();
+
+		this.loggedIn = this.isLoggedIn();
 		this.tokenDurationMinutes = 0;
+
+		this.logger.log('=== app initialized ====');
 	}
 
 
@@ -88,9 +95,17 @@ export class AppComponent implements OnInit {
 	}
 
 	checkJWT() {
-		this.loggedIn = this.jwtService.isLoggedIn();
+		this.loggedIn = this.isLoggedIn();
 		this.tokenDurationMinutes = this.jwtService.jwtDurationMinutes();
 		this.showJwt = true;
+	}
+
+	private isLoggedIn(): boolean {
+		const authState = localStorage.getItem(STORAGE_KEY_JWT_STATE);
+		if (authState && 'signup' === authState) {
+			return false;
+		}
+		return !this.jwtService.isJWTExpired();
 	}
 }
 

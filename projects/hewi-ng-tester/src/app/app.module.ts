@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { HewiNgLibModule } from 'projects/hewi-ng-lib/src/public_api';
 
+
 @NgModule({
 	declarations: [
 		AppComponent
