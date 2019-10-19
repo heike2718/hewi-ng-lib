@@ -15,7 +15,7 @@ common components for my angular apps
 
 ## Notizen (chronologisch absteigend)
 
-__3.0.1__ initialize loglevel more convenients
+__3.1.0__ more convenient console logger
 
 __3.0.0__ upgrade to angular 8
 
@@ -27,6 +27,14 @@ __2.2.2__ JWTService: Query-Parameter state und nonce vor der redirect url, da b
 * modal fertig zum Verwenden in Apps
 * messages-Komponente fertig zum Verwenden in Apps
 * by Angular-CLI generated component and a easy peasy make text to red h1- component just for playing with the tools
+
+
+## initialize the logging
+
+* implement a [LogPublishersService]( ./projects/hewi-ng-tester/src/app/services/log-publishers.service.ts )
+* define an environment variable for the loglevel
+* in [app.component.ts](./projects/hewi-ng-tester/src/app/app.component.ts) init the log level and register your LogPublishers
+
 
 ## Tests
 
