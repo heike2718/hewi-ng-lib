@@ -44,9 +44,17 @@ export class LogService {
 		this.publishers = publishers;
 	}
 
-	public setLevel(level: LogLevel): LogService {
-		this.level = level;
-		return this;
+	public initLevel(level: number): void {
+		switch (level) {
+			case 0: this.level = LogLevel.All; break;
+			case 1: this.level = LogLevel.Debug; break;
+			case 2: this.level = LogLevel.Info; break;
+			case 3: this.level = LogLevel.Warn; break;
+			case 4: this.level = LogLevel.Error; break;
+			case 5: this.level = LogLevel.Fatal; break;
+			case 6: this.level = LogLevel.Off; break;
+			default: this.level = LogLevel.Error;
+		}
 	}
 
 	private writeToLog(msg: string, level: LogLevel, accessToken: string) {
