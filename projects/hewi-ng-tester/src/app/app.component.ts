@@ -1,15 +1,17 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, AfterViewInit } from '@angular/core';
 import { MessagesService, STORAGE_KEY_JWT, STORAGE_KEY_JWT_STATE, JWTService, LogService } from 'projects/hewi-ng-lib/src/public_api';
 import { ModalService } from 'projects/hewi-ng-lib/src/public_api';
 import { filter } from 'rxjs/operators';
 import { AuthService } from './services/auth.service';
+import { environment } from '../environments/environment';
+import { LogPublishersService } from './services/log-publishers.service';
 
 @Component({
 	selector: 'app-root',
 	templateUrl: './app.component.html',
 	styleUrls: ['./app.component.css']
 })
-export class AppComponent implements OnInit {
+export class AppComponent implements OnInit, AfterViewInit {
 
 	title = 'hewi-ng-tester';
 
@@ -32,11 +34,11 @@ export class AppComponent implements OnInit {
 		, private modalService: ModalService
 		, private authService: AuthService
 		, private jwtService: JWTService
-		, private logger: LogService) { }
+		, private logPublishersService: LogPublishersService
+		, private logger: LogService) {
+	}
 
 	ngOnInit() {
-
-		this.logger.log('=== app about to init ====');
 
 		this.showJwt = false;
 		this.messagesService.message$.pipe(
@@ -61,9 +63,12 @@ export class AppComponent implements OnInit {
 		this.loggedIn = this.isLoggedIn();
 		this.tokenDurationMinutes = 0;
 
-		this.logger.log('=== app initialized ====');
+		this.logger.registerPublishers(this.logPublishersService.publishers);
 	}
 
+	ngAfterViewInit(): void {
+		this.logger.info('app initialized', 'b5f4ba94-8a91');
+	}
 
 	openInfo() {
 		console.log('click info');
@@ -106,6 +111,18 @@ export class AppComponent implements OnInit {
 			return false;
 		}
 		return !this.jwtService.isJWTExpired();
+	}
+
+	debug(): void {
+		this.logger.debug(new Date().toLocaleString('de-DE') + ': this is only shown with level >= 1');
+	}
+
+	info(): void {
+		this.logger.info(new Date().toLocaleString('de-DE') + ': this is only shown with level >= 2');
+	}
+
+	error(): void {
+		this.logger.error(new Date().toLocaleString('de-DE') + ': this is only shown with level >= 4');
 	}
 }
 

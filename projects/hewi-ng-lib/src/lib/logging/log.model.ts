@@ -19,16 +19,26 @@ export class LogEntry {
 		this.timestamp = new Date().getTime();
 		this.message = msg;
 		this.level = l;
-		this.clientAccessToken = at ? at : 'unknown';
+		this.clientAccessToken = at ? at : null;
 	}
 
-	createLogString(): string {
-		let value = this.timestamp + ' - ';
+	public getLevel(): string {
+		switch (this.level) {
+			case 0: return 'ALL';
+			case 1: return 'DEBUG';
+			case 2: return 'INFO';
+			case 3: return 'WARN';
+			case 4: return 'ERROR';
+			case 5: return 'FATAL';
+			default: return '';
+		}
+	}
 
-		value += 'Type: ' + LogLevel[this.level];
-		value += 'clientAT: ' + this.clientAccessToken;
-		value += 'Message: ' + this.message;
+	public getMessage(): string {
+		return this.message;
+	}
 
-		return value;
+	public getAccessToken(): string {
+		return this.clientAccessToken;
 	}
 }
