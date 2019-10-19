@@ -10,13 +10,14 @@ export class LogPublishersService {
 	publishers: LogPublisher[] = [];
 
 	constructor() {
+
 		this.buildPublishers();
 	}
 
 
 	private buildPublishers(): void {
 
-		if (environment) {
+		if (environment.consoleLogActive) {
 			this.publishers.push(new LogConsole());
 		}
 	}

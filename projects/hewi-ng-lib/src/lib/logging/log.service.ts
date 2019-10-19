@@ -10,34 +10,29 @@ export class LogService {
 	private level: LogLevel;
 	private publishers: LogPublisher[];
 
-	private dateOptions = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
-
 	constructor() {
 		this.level = LogLevel.Error;
+		this.publishers = [];
 	}
 
-	debug(msg: string, accessToken: string) {
+	debug(msg: string, accessToken?: string) {
 		this.writeToLog(msg, LogLevel.Debug, accessToken);
 	}
 
-	info(msg: string, accessToken: string) {
+	info(msg: string, accessToken?: string) {
 		this.writeToLog(msg, LogLevel.Info, accessToken);
 	}
 
-	warn(msg: string, accessToken: string) {
+	warn(msg: string, accessToken?: string) {
 		this.writeToLog(msg, LogLevel.Warn, accessToken);
 	}
 
-	error(msg: string, accessToken: string) {
+	error(msg: string, accessToken?: string) {
 		this.writeToLog(msg, LogLevel.Error, accessToken);
 	}
 
-	fatal(msg: string, accessToken: string) {
+	fatal(msg: string, accessToken?: string) {
 		this.writeToLog(msg, LogLevel.Fatal, accessToken);
-	}
-
-	log(msg: any) {
-		console.log(new Date().toLocaleString('de-DE') + ': ' + JSON.stringify(msg));
 	}
 
 	public registerPublishers(publishers: LogPublisher[]) {
@@ -58,13 +53,15 @@ export class LogService {
 	}
 
 	private writeToLog(msg: string, level: LogLevel, accessToken: string) {
+
 		if (this.shouldLog(level)) {
 
 			const entry = new LogEntry(msg, level, accessToken);
 
 			for (const publisher of this.publishers) {
+
 				publisher.log(entry)
-					.subscribe(_response => console.log(_response));
+					.subscribe(_response => 'console.log(_response)');
 			}
 		}
 	}

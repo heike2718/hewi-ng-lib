@@ -6,7 +6,8 @@ export const environment = {
   production: false,
   apiUrl: 'http://localhost:9000/authprovider',
   consoleLogActive: true,
-  serverLogActive: false
+  serverLogActive: false,
+  loglevel: 2
 };
 
 /*
