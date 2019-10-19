@@ -3,7 +3,6 @@ import { LogEntry } from './log.model';
 import { HttpClient } from '@angular/common/http';
 import { map, publishLast, refCount } from 'rxjs/operators';
 import { ResponsePayload } from '../messages/models/message.model';
-import { LogLevel } from 'hewi-ng-lib/public_api';
 
 export abstract class LogPublisher {
 	location: string;
