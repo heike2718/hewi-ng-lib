@@ -1,8 +1,5 @@
-import * as moment_ from 'moment';
 import { Injectable } from '@angular/core';
-import { AuthResult, STORAGE_KEY_JWT_EXPIRES_AT } from './jwt.model';
-
-const moment = moment_;
+import { AuthResult } from './jwt.model';
 
 @Injectable({
 	providedIn: 'root'
@@ -36,47 +33,5 @@ export class JWTService {
 			);
 		}
 		return result;
-	}
-
-
-	private getExpirationAsMoment() {
-		if (!localStorage.getItem(STORAGE_KEY_JWT_EXPIRES_AT)) {
-			return null;
-		}
-		const expiration = localStorage.getItem(STORAGE_KEY_JWT_EXPIRES_AT);
-		// das expiresAt sind Sekunden seit 01.01.1970
-		const expiresAt = JSON.parse(expiration) * 1000;
-		return moment(expiresAt);
-	}
-
-	public isJWTExpired(): boolean {
-		const expiration = this.getExpirationAsMoment();
-		if (expiration === null) {
-			return true;
-		}
-		return moment().isAfter(expiration);
-	}
-
-	/** Gibt die Gültigkeit des JWT ab jetzt in Minuten an */
-	public jwtDurationMinutes(): number {
-		const expiration = this.getExpirationAsMoment();
-		if (expiration === null) {
-			return 0;
-		}
-
-		const now = moment();
-		const diff = expiration.diff(now, 'minutes', false);
-		console.log('now: ' + JSON.stringify(now.toObject()) + ', JWT expires at ' + JSON.stringify(expiration.toObject()));
-		console.log('Diff in minutes: ' + diff);
-
-		return diff;
-	}
-
-	public getLoginUrl(authUrl: string, accessToken: string, redirectUrl: string, state: string, nonce: string) {
-		return authUrl + '#/login?accessToken=' + accessToken + '&state=' + state + '&nonce=' + nonce + '&redirectUrl=' + redirectUrl;
-	}
-
-	public getSignupUrl(authUrl: string, accessToken: string, redirectUrl: string, state: string, nonce: string) {
-		return authUrl + '#/signup?accessToken=' + accessToken + '&state=' + state + '&nonce=' + nonce + '&redirectUrl=' + redirectUrl;
 	}
 }
