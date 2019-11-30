@@ -15,6 +15,8 @@ common components for my angular apps
 
 ## Notizen (chronologisch absteigend)
 
+__3.2.0__ jwt reduced to merely parsing hash from auth-app
+
 __3.1.0__ more convenient console logger
 
 __3.0.0__ upgrade to angular 8
@@ -39,7 +41,7 @@ __2.2.2__ JWTService: Query-Parameter state und nonce vor der redirect url, da b
 ## Tests
 
 Teste JWT mit folgender URL:
-	http://localhost:4200/#accessToken=75mdGzlDNrWD&expiresAt=1660600&tokenType=Bearer&state=login&idToken=eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJzdWIiOiI0ZDhlZDAzYS01NzVhLTQ0MmUtODlmNC0wZTU0ZTUxZGQwZDgiLCJpc3MiOiJoZWlrZTI3MTgvYXV0aHByb3ZpZGVyIiwibmFtZSI6Ik1heCBNdXN0ZXJtYW5uIiwiZXhwIjoxNTYwNTg1MTIxLCJpYXQiOjE1NjA1ODQ4MjF9.RIYcSMQDG1A7GORQPOd9FvGRyOtcB2Wc5pnNeAxAb1eyHI8DL22baGz6xHnrH66Vl0wqABL4SQOgEDErWznjv66kMBaVF9mo0uMDRz9lns26EG4nRLLwVlvG8IEA4FSWL54553wR-AczYjdYnxJFv3CBIRIqg7uBc7m4gPKca73KZgpgH2PYqgjqPHg2MqEmMrC2Qyx2ksHBdrqMXPgu7qRKqFwifsCNOGs84Hf0-66jUx40E_vtXiU8reVe5aOSyPs1q6Z6aDdSSF1UjUkK1gQGSW21xq3zWin1GAj9kRSWaUkaaZ17wAGc4Shvd08Pky5prY8EhH6xqeM4ukSc-Q
+	http://localhost:4200/	#accessToken=75mdGzlDNrWD&expiresAt=1660600&tokenType=Bearer&state=login&idToken=eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJzdWIiOiI0ZDhlZDAzYS01NzVhLTQ0MmUtODlmNC0wZTU0ZTUxZGQwZDgiLCJpc3MiOiJoZWlrZTI3MTgvYXV0aHByb3ZpZGVyIiwibmFtZSI6Ik1heCBNdXN0ZXJtYW5uIiwiZXhwIjoxNTYwNTg1MTIxLCJpYXQiOjE1NjA1ODQ4MjF9.RIYcSMQDG1A7GORQPOd9FvGRyOtcB2Wc5pnNeAxAb1eyHI8DL22baGz6xHnrH66Vl0wqABL4SQOgEDErWznjv66kMBaVF9mo0uMDRz9lns26EG4nRLLwVlvG8IEA4FSWL54553wR-AczYjdYnxJFv3CBIRIqg7uBc7m4gPKca73KZgpgH2PYqgjqPHg2MqEmMrC2Qyx2ksHBdrqMXPgu7qRKqFwifsCNOGs84Hf0-66jUx40E_vtXiU8reVe5aOSyPs1q6Z6aDdSSF1UjUkK1gQGSW21xq3zWin1GAj9kRSWaUkaaZ17wAGc4Shvd08Pky5prY8EhH6xqeM4ukSc-Q
 
 Hinweis: expiresAt ist aus Kompatibilitätsgründen die UNIX-Epoche, also Anzahl der __Sekunden__ seit 01.01.1970. Siehe [epochconverter](https://www.epochconverter.com/)
 
