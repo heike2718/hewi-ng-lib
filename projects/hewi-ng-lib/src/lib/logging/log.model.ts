@@ -14,7 +14,7 @@ export class LogEntry {
 	private message: string;
 	private level: LogLevel;
 
-	constructor(msg: string, l: LogLevel, at?: string) {
+	constructor(msg: string, l: LogLevel) {
 		this.timestamp = new Date().getTime();
 		this.message = msg;
 		this.level = l;
