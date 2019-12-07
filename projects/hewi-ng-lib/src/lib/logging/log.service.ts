@@ -15,24 +15,24 @@ export class LogService {
 		this.publishers = [];
 	}
 
-	debug(msg: string, accessToken?: string) {
-		this.writeToLog(msg, LogLevel.Debug, accessToken);
+	debug(msg: string) {
+		this.writeToLog(msg, LogLevel.Debug);
 	}
 
-	info(msg: string, accessToken?: string) {
-		this.writeToLog(msg, LogLevel.Info, accessToken);
+	info(msg: string) {
+		this.writeToLog(msg, LogLevel.Info);
 	}
 
-	warn(msg: string, accessToken?: string) {
-		this.writeToLog(msg, LogLevel.Warn, accessToken);
+	warn(msg: string) {
+		this.writeToLog(msg, LogLevel.Warn);
 	}
 
-	error(msg: string, accessToken?: string) {
-		this.writeToLog(msg, LogLevel.Error, accessToken);
+	error(msg: string) {
+		this.writeToLog(msg, LogLevel.Error);
 	}
 
-	fatal(msg: string, accessToken?: string) {
-		this.writeToLog(msg, LogLevel.Fatal, accessToken);
+	fatal(msg: string) {
+		this.writeToLog(msg, LogLevel.Fatal);
 	}
 
 	public registerPublishers(publishers: LogPublisher[]) {
@@ -52,11 +52,11 @@ export class LogService {
 		}
 	}
 
-	private writeToLog(msg: string, level: LogLevel, accessToken: string) {
+	private writeToLog(msg: string, level: LogLevel) {
 
 		if (this.shouldLog(level)) {
 
-			const entry = new LogEntry(msg, level, accessToken);
+			const entry = new LogEntry(msg, level);
 
 			for (const publisher of this.publishers) {
 
