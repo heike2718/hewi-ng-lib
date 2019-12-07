@@ -11,16 +11,12 @@ export abstract class LogPublisher {
 	abstract clear(): Observable<boolean>;
 }
 
+// tslint:disable-next-line: max-classes-per-file
 export class LogConsole extends LogPublisher {
 
 	log(entry: LogEntry): Observable<boolean> {
 
-		let value = entry.getLevel() + ' - ' + entry.getMessage();
-		if (entry.getAccessToken() !== null && entry.getAccessToken() !== undefined) {
-			value += ' (clientAccessToken=' + entry.getAccessToken() + ')';
-		}
-
-		console.log(value);
+		console.log(entry.getLevel() + ' - ' + entry.getMessage());
 		return of(true);
 	}
 
@@ -30,6 +26,7 @@ export class LogConsole extends LogPublisher {
 	}
 }
 
+// tslint:disable-next-line: max-classes-per-file
 export class LogWebApi extends LogPublisher {
 
 	constructor(private http: HttpClient, private url: string) {
@@ -40,7 +37,7 @@ export class LogWebApi extends LogPublisher {
 	log(entry: LogEntry): Observable<boolean> {
 
 		this.http.post(this.url, entry).pipe(
-			map(res => <ResponsePayload>res),
+			map(res => res as ResponsePayload),
 			publishLast(),
 			refCount()
 		).subscribe(
@@ -72,4 +69,5 @@ export class LogWebApi extends LogPublisher {
 	}
 
 }
+
 
