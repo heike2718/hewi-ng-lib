@@ -15,6 +15,8 @@ common components for my angular apps
 
 ## Notizen (chronologisch absteigend)
 
+__3.2.1__ cve fixed
+
 __3.2.0__ jwt reduced to merely parsing hash from auth-app
 
 __3.1.0__ more convenient console logger
