@@ -11,7 +11,6 @@ export enum LogLevel {
 export class LogEntry {
 
 	private timestamp: number;
-	private clientAccessToken: string;
 	private message: string;
 	private level: LogLevel;
 
@@ -19,7 +18,6 @@ export class LogEntry {
 		this.timestamp = new Date().getTime();
 		this.message = msg;
 		this.level = l;
-		this.clientAccessToken = at ? at : null;
 	}
 
 	public getLevel(): string {
@@ -38,7 +36,7 @@ export class LogEntry {
 		return this.message;
 	}
 
-	public getAccessToken(): string {
-		return this.clientAccessToken;
+	public getTimestamp(): number {
+		return this.timestamp;
 	}
 }
