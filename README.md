@@ -15,6 +15,8 @@ common components for my angular apps
 
 ## Notizen (chronologisch absteigend)
 
+__4.0.0__ removed unused properties from LogEntry (breaking change!)
+
 __3.2.1__ cve fixed
 
 __3.2.0__ jwt reduced to merely parsing hash from auth-app
