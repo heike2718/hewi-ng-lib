@@ -15,19 +15,37 @@ common components for my angular apps
 
 ## Notizen (chronologisch absteigend)
 
-__4.0.0__ removed unused properties from LogEntry (breaking change!)
+__4.1.0__
 
-__3.2.1__ cve fixed
+[Refactor AuthResult](https://github.com/heike2718/hewi-ng-lib/issues/8)
 
-__3.2.0__ jwt reduced to merely parsing hash from auth-app
+__4.0.0__
 
-__3.1.0__ more convenient console logger
+removed unused properties from LogEntry (breaking change!)
 
-__3.0.0__ upgrade to angular 8
+__3.2.1__
 
-__2.2.4__ logger: LogService, LogPublishers and LogEntry-Model
+cve fixed
 
-__2.2.2__ JWTService: Query-Parameter state und nonce vor der redirect url, da bei #-redirect-urls die alles nach # angeschnitten wird.
+__3.2.0__
+
+jwt reduced to merely parsing hash from auth-app
+
+__3.1.0__
+
+more convenient console logger
+
+__3.0.0__
+
+upgrade to angular 8
+
+__2.2.4__
+
+logger: LogService, LogPublishers and LogEntry-Model
+
+__2.2.2__
+
+JWTService: Query-Parameter state und nonce vor der redirect url, da bei #-redirect-urls die alles nach # angeschnitten wird.
 
 * HateoasPayload als JSON-Objekt ergänzt
 * modal fertig zum Verwenden in Apps
