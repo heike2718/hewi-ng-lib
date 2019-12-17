@@ -1,6 +1,6 @@
 {
   "name": "hewi-ng-lib",
-  "version": "4.0.1",
+  "version": "4.1.0",
   "description": "custom angular components like modal to be used in my angular projects",
   "scripts": {
     "ng": "ng",
@@ -72,5 +72,8 @@
   "author": {
     "name": "Heike Winkelvoß",
     "url": "https://mathe-jung-alt.de"
+  },
+  "resolutions": {
+    "serialize-javascript": "^2.1.1"
   }
 }
