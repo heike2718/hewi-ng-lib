@@ -1,6 +1,6 @@
 {
   "name": "hewi-ng-lib",
-  "version": "4.1.0",
+  "version": "4.1.1",
   "description": "custom angular components like modal to be used in my angular projects",
   "scripts": {
     "ng": "ng",
@@ -36,7 +36,7 @@
     "rxjs": "~6.5.3"
   },
   "devDependencies": {
-    "@angular-devkit/build-angular": "~0.803.12",
+    "@angular-devkit/build-angular": "^0.803.21",
     "@angular-devkit/build-ng-packagr": "~0.803.12",
     "@angular/cli": "^8.3.12",
     "@angular/compiler-cli": "^8.2.11",
@@ -48,7 +48,7 @@
     "copyfiles": "^2.1.0",
     "jasmine-core": "~3.4.0",
     "jasmine-spec-reporter": "~4.2.1",
-    "karma": "^4.1.0",
+    "karma": "^4.4.1",
     "karma-chrome-launcher": "~2.2.0",
     "karma-coverage-istanbul-reporter": "~2.0.5",
     "karma-jasmine": "~2.0.1",
