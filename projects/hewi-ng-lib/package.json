@@ -12,7 +12,7 @@
 	"license": "MIT",
 	"repository": {
 		"type": "git",
-		"url": "https://github.com/heike2718/hewi-ng-lib.git"
+		"url": "https://github.com/heike2718/hewi-ng-lib"
 	},
 	"homepage": "https://mathe-jung-alt.de",
 	"peerDependencies": {
