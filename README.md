@@ -15,6 +15,11 @@ common components for my angular apps
 
 ## Notizen (chronologisch absteigend)
 
+__5.0.0__
+
+update to angular 9
+
+
 __4.1.0__
 
 [Refactor AuthResult](https://github.com/heike2718/hewi-ng-lib/issues/8)
