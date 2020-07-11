@@ -31,6 +31,7 @@ export class JWTService {
 						case 'nonce': result.nonce = keyVal[1]; break;
 						case 'state': result.state = keyVal[1]; break;
 						case 'idToken': result.idToken = keyVal[1]; break;
+						case 'tokenExchangeType': result.tokenExchangeType = keyVal[1]; break;
 					}
 				}
 			);

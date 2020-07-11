@@ -1,9 +1,8 @@
 import { Component, OnInit, AfterViewInit } from '@angular/core';
-import { MessagesService, STORAGE_KEY_JWT, STORAGE_KEY_JWT_STATE, JWTService, LogService } from 'projects/hewi-ng-lib/src/public_api';
+import { MessagesService, JWTService, LogService } from 'projects/hewi-ng-lib/src/public_api';
 import { ModalService } from 'projects/hewi-ng-lib/src/public_api';
 import { filter } from 'rxjs/operators';
 import { AuthService } from './services/auth.service';
-import { environment } from '../environments/environment';
 import { LogPublishersService } from './services/log-publishers.service';
 
 @Component({
@@ -53,21 +52,13 @@ export class AppComponent implements OnInit, AfterViewInit {
 		// Daher hier redirect-URL parsen
 		this.authService.parseHash(window.location.hash);
 
-		const j = localStorage.getItem(STORAGE_KEY_JWT);
-		if (j) {
-			this.jwt = j.substr(0, 20);
-		} else {
-			this.jwt = 'please call url with hash';
-		}
-
-		this.loggedIn = this.isLoggedIn();
+		this.loggedIn = false;
 		this.tokenDurationMinutes = 0;
 
 		this.logger.registerPublishers(this.logPublishersService.publishers);
 	}
 
 	ngAfterViewInit(): void {
-		this.logger.info('app initialized', 'b5f4ba94-8a91');
 	}
 
 	openInfo() {
@@ -97,20 +88,6 @@ export class AppComponent implements OnInit, AfterViewInit {
 
 	closeModal() {
 		this.modalService.close();
-	}
-
-	checkJWT() {
-		this.loggedIn = this.isLoggedIn();
-		this.tokenDurationMinutes = this.jwtService.jwtDurationMinutes();
-		this.showJwt = true;
-	}
-
-	private isLoggedIn(): boolean {
-		const authState = localStorage.getItem(STORAGE_KEY_JWT_STATE);
-		if (authState && 'signup' === authState) {
-			return false;
-		}
-		return !this.jwtService.isJWTExpired();
 	}
 
 	debug(): void {
