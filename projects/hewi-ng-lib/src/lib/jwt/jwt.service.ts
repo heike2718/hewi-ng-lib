@@ -17,7 +17,8 @@ export class JWTService {
 			expiresAt: 0,
 			nonce: undefined,
 			state: undefined,
-			idToken: undefined
+			idToken: undefined,
+			oauthFlowType: 'IMPLICITE_FLOW'
 		};
 
 		if (hashStr.length > 0) {
@@ -31,7 +32,7 @@ export class JWTService {
 						case 'nonce': result.nonce = keyVal[1]; break;
 						case 'state': result.state = keyVal[1]; break;
 						case 'idToken': result.idToken = keyVal[1]; break;
-						case 'tokenExchangeType': result.tokenExchangeType = keyVal[1]; break;
+						case 'oauthFlowType': result.oauthFlowType = keyVal[1]; break;
 					}
 				}
 			);

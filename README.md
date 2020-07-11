@@ -15,6 +15,10 @@ common components for my angular apps
 
 ## Notizen (chronologisch absteigend)
 
+__5.1.0__
+
+2 different possible oauth flow types
+
 __5.0.0__
 
 update to angular 9
