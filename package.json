@@ -1,6 +1,6 @@
 {
   "name": "hewi-ng-lib",
-  "version": "5.1.0",
+  "version": "5.1.1",
   "description": "custom angular components like modal to be used in my angular projects",
   "scripts": {
     "ng": "ng",

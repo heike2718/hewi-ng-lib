@@ -15,6 +15,10 @@ common components for my angular apps
 
 ## Notizen (chronologisch absteigend)
 
+__5.1.1__
+
+several vulnerable dependencies replaced with fixed versions
+
 __5.1.0__
 
 2 different possible oauth flow types
