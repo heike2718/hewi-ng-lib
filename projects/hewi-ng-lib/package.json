@@ -14,7 +14,10 @@
 		"type": "git",
 		"url": "https://github.com/heike2718/hewi-ng-lib"
 	},
-	"homepage": "https://mathe-jung-alt.de",
+  "homepage": "https://mathe-jung-alt.de",
+  "dependencies": {
+    "tslib": "^2.0.0"
+  },
 	"peerDependencies": {
 		"@angular/common": "^8.0.0",
 		"@angular/core": "^8.0.0",
